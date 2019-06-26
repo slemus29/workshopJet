@@ -1,5 +1,38 @@
 const { makeExecutableSchema } = require('graphql-tools');
 
+const POSTS = [
+  {
+      title: "My post",
+      description: 'Lorem impum',
+      favorite: false,
+  },
+  {
+      title: "My post 2",
+      description: 'Lorem impum',
+      favorite: false,
+  },
+  {
+      title: "My post 3",
+      description: 'Lorem impum',
+      favorite: false,
+  },
+  {
+      title: "My post 4",
+      description: 'Lorem impum',
+      favorite: false,
+  },
+  {
+      title: "My post 5",
+      description: 'Lorem impum',
+      favorite: false,
+  },
+  {
+      title: "My post 6",
+      description: 'Lorem impum',
+      favorite: false,
+  }
+]
+
 const schema = makeExecutableSchema({
   typeDefs: `
     type Post {
@@ -35,15 +68,7 @@ const schema = makeExecutableSchema({
           email: 'guerrero@zemoga.com',
         },
       ],
-      posts: () => [
-        {
-          id: 1,
-          title: 'Mi titulo',
-        },
-        {
-          title: 'Cesar',
-        },
-      ],
+      posts: () => POSTS
     },
   },
 });
